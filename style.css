@@ -1,0 +1,235 @@
+:root {
+    /* Paleta "Rosa Aveludado" - Elegante, romântica e marcante */
+    --bg-light: #2A1118; /* Fundo vinho/bordô profundo */
+    --card-bg: #45212E; /* Fundo dos cards em rosa fechado/marsala */
+    --primary-pink: #FF5E84; /* Rosa vibrante e apaixonante para destaques e botões */
+    --text-dark: #FDE8ED; /* Texto num tom de rosinha quase branco para leitura perfeita */
+    --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra mais densa para dar profundidade */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px 15px;
+}
+
+/* Fundo com efeito floral adaptado para o tema noturno aveludado */
+.floral-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-light);
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 94, 132, 0.15) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(255, 94, 132, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Tipografia */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-pink);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    min-height: 40px; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Dá um leve brilho no texto */
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-pink);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Cards Gerais */
+.section-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 94, 132, 0.2);
+}
+
+/* Foto com aro floral */
+.photo-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 25px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-pink); /* Borda rosa vibrante */
+    box-shadow: 0 5px 20px rgba(255, 94, 132, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.floral-ring {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #FF5E84, #8C213F);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* Contador */
+.timer-box {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25); /* Fundo escurinho translúcido */
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px dashed var(--primary-pink);
+}
+
+.timer-title, .timer-subtitle {
+    font-size: 0.9rem;
+    color: #D6A8B8; /* Rosa bem suave para textos de apoio */
+}
+
+.time-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-pink);
+    margin: 8px 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Player de Música */
+.music-player {
+    text-align: center;
+}
+.song-name { font-weight: bold; font-size: 1.1rem; }
+.artist-name { font-size: 0.9rem; color: #D6A8B8; margin-bottom: 15px; }
+
+/* Botões */
+button, .spotify-btn {
+    background-color: var(--primary-pink);
+    color: #FFF;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 94, 132, 0.3);
+    transition: transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:active, .spotify-btn:active {
+    transform: scale(0.95);
+}
+
+/* Linha do Tempo e Cards de Atributos */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.story-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px 20px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    border-left: 5px solid var(--primary-pink);
+}
+
+.flower-icon {
+    font-size: 1.5rem;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background: var(--bg-light); /* O ícone fica com o fundo escuro da página */
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid var(--primary-pink);
+}
+
+.card-title {
+    color: var(--primary-pink);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.story-card p {
+    line-height: 1.6;
+    font-size: 1.05rem; /* Um pouco maior para leitura fácil */
+    color: var(--text-dark);
+}
+
+/* Spotify Links */
+.spotify-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.spotify-btn {
+    background-color: #1DB954; /* Cor oficial do Spotify mantém-se para reconhecimento */
+    box-shadow: 0 4px 10px rgba(29, 185, 84, 0.2);
+    width: 100%;
+}
+
+/* Botões do Convite */
+.cta-text {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    height: 60px;
+}
+
+.btn-yes {
+    width: 120px;
+}
+
+.btn-no {
+    width: 120px;
+    background-color: #8C5163; /* Um rosa apagado/acinzentado para o "Não" */
+    color: #FFF;
+    box-shadow: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(10px); 
+}
