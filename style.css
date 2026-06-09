@@ -229,6 +229,5 @@ button:active, .spotify-btn:active {
     background-color: #8C5163; 
     color: #FFF;
     box-shadow: none;
-    /* Removemos o position: absolute, o left e o transform daqui */
     transition: top 0.2s, left 0.2s; /* Adiciona uma transição suave para quando ele fugir */
 }
