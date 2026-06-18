@@ -191,68 +191,66 @@ button:active, .spotify-btn:active {
     font-size: 1.05rem; /* Um pouco maior para leitura fácil */
     color: var(--text-dark);
 }
-/* Galeria Polaroid Dinâmica e Escalável */
+
+/* Galeria Polaroid - Forçando Lado a Lado com CSS Grid */
 .polaroid-gallery {
-    display: flex;
-    flex-wrap: wrap; /* Faz as fotos pularem de linha sozinhas no mobile */
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Cria exatamente duas colunas de tamanhos iguais */
+    gap: 10px; /* Espaçamento entre as fotos */
+    justify-items: center; /* Centraliza a foto dentro da sua coluna */
     padding-top: 15px;
+    align-items: start;
 }
 
 .polaroid {
-    background: #FFFFFF; /* Fundo branco clássico de foto revelada */
-    padding: 10px 10px 16px 10px;
+    box-sizing: border-box; /* REGRA DE OURO: Impede que o padding quebre o layout */
+    background: #FFFFFF; 
+    padding: 8px 8px 14px 8px; 
     border-radius: 4px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-    width: 145px; /* Tamanho ideal para caberem duas fotos por linha na tela do celular */
+    
+    width: 100%; /* Ocupa 100% da sua coluna (que é metade da tela) */
+    max-width: 160px; /* Limite máximo para não ficar feio no computador */
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.1s;
     cursor: pointer;
     position: relative;
 }
 
-/* O MOTOR DO CSS: Inclina as fotos de forma aleatória e automática */
+/* Inclinações românticas */
 .polaroid:nth-child(odd) {
     transform: rotate(-4deg);
 }
 
 .polaroid:nth-child(even) {
     transform: rotate(3deg);
-    margin-top: 12px; /* Desencontra levemente a altura para parecer mais natural */
+    margin-top: 15px; /* Desencontra a altura para ficar mais natural */
 }
 
-.polaroid:nth-child(3n) {
-    transform: rotate(-2deg);
-}
-
-.polaroid:nth-child(4n) {
-    transform: rotate(4deg);
-}
-
-/* Efeito Magnífico ao Toque/Hover: A foto ganha vida, endireita e flutua */
+/* Efeito ao tocar */
 .polaroid:hover, .polaroid:active {
-    transform: scale(1.18) rotate(0deg) translateY(-8px);
-    z-index: 99; /* Garante que a foto expandida fique por cima de todas as outras */
-    box-shadow: 0 15px 30px rgba(255, 94, 132, 0.6); /* Brilho rosa apaixonante ao redor */
+    transform: scale(1.15) rotate(0deg) translateY(-8px);
+    z-index: 99; 
+    box-shadow: 0 15px 30px rgba(255, 94, 132, 0.6); 
 }
 
 .polaroid img {
     width: 100%;
-    height: 145px; /* Mantém a imagem perfeitamente quadrada no estilo clássico */
-    object-fit: cover; /* Recorta a foto sem distorcer ou esticar */
+    height: 140px; 
+    object-fit: cover; 
     border-radius: 2px;
 }
 
 .polaroid-caption {
     font-family: 'Dancing Script', cursive;
-    color: #2A1118; /* Tom escuro para leitura perfeita sobre o papel branco */
+    color: #2A1118; 
     text-align: center;
-    margin-top: 10px;
-    font-size: 1.1rem; /* Ajustado milimetricamente para o tamanho da foto */
-    line-height: 1.2;
-    word-wrap: break-word; /* Força o texto a quebrar linha se for muito longo */
+    margin-top: 8px;
+    font-size: 1.1rem; 
+    line-height: 1.1;
+    word-wrap: break-word; 
 }
+
 /* Spotify Links */
 .spotify-links {
     display: flex;
